@@ -1,0 +1,2140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube</title>
+    <link rel="icon" href="images/logo-icon.png">
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap - CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!-- Bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!-- Google icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined">
+</head>
+
+<body>
+    <!-- header section -->
+    <header class="bg-white fixed-top">
+        <!-- header above: navigation bar -->
+        <nav class="header__above navbar navbar-expand-lg border-bottom p-0 px-lg-4">
+            <div class="container-fluid p-0">
+                <!-- header-left: hamburger button & logo -->
+                <div class="header__left d-flex align-items-center">
+                    <!-- button trigger offcanvas - header left-menu -->
+                    <button class="btn ctm-text-color text-decoration-none d-none d-lg-flex align-items-center p-3" type="button" data-bs-toggle="offcanvas" role="button" data-bs-target="#menu-btn" aria-controls="menu-btn">
+                        <i class="material-icons">menu</i>
+                    </button>
+
+                    <a class="navbar-brand position-relative px-4" href="#">
+                        <img src="images/logo.png" alt="logo" height="20px">
+                        <span class="d-none d-lg-inline-block ctm-text-color fs-6 ps-2 position-absolute translate-middle-y">VN</span>
+                    </a>
+                </div>
+
+                <!-- tablet & mobile search -->
+                <div class="d-lg-none">
+                    <!-- button trigger offcanvas - search -->
+                    <a class="btn px-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#search-offcanvas" aria-controls="search-offcanvas">
+                        <i class="bi bi-search ctm-text-color fs-3"></i>
+                    </a>
+
+                    <!-- button trigger modal - account -->
+                    <a type="button" class="btn px-3" data-bs-toggle="modal" data-bs-target="#account">
+                        <i class="bi bi-person-circle ctm-text-color fs-2"></i>
+                    </a>
+                    
+                </div>
+                
+                <!-- laptop search -->
+                <div class="header__search-lg d-none d-lg-flex align-items-center" style="height: 3.2rem;">
+                    <input type="text" placeholder="Search" class="header__search-lg-box h-100 ctm-fs-normal ps-4 ms-5 flex-fill rounded-0 rounded-start border">
+
+                    <button class="btn border border-start-0 h-100 px-4 py-0 me-3 d-flex align-items-center bg-light rounded-0 rounded-end tt" data-bs-placement="bottom" title="Search">
+                        <i class="bi bi-search ctm-text-color ctm-fs-normal px-3"></i>
+                    </button>                    
+
+                    <!-- Button trigger modal - voice search -->
+                    <button type="button" class="btn rounded-circle d-flex align-items-center justify-content-between bg-light p-2 tt" data-bs-toggle="modal" data-bs-target="#voice-search" data-bs-placement="bottom" title="Search with your voice">
+                        <i class="material-icons fs-1">mic</i>
+                    </button>
+                </div>
+
+                <!-- header - right -->
+                <div class="header__right d-none d-lg-flex justify-content-end align-items-center">
+                    
+                    <!-- YouTube app list -->
+                    <div class="dropdown me-3">
+                        <button class="btn ctm-text-color d-flex align-items-center tt" type="button" id="apps" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside" data-bs-placement="bottom" title="YouTube apps">
+                            <i class="material-icons">apps</i>
+                        </button>
+                        
+                        <ul class="dropdown-menu rounded-0 border-top-0 border-end-0 p-0" aria-labelledby="apps" style="width: 22rem;">
+                            <li class="py-2 ctm-fs-normal border-bottom">
+                                <a class="ctm-dropdown-reset dropdown-item ps-4 py-3 d-flex align-items-center" href="#">
+                                    <i class="material-icons me-3" style="color: red;">smart_display</i>
+                                    YouTube TV
+                                </a>
+                            </li>
+                            <li class="py-2 ctm-fs-normal border-bottom">
+                                <a class="ctm-dropdown-reset dropdown-item ps-4 py-3 d-flex align-items-center" href="#">
+                                    <i class="material-icons me-3" style="color: red;">smart_display</i>
+                                    YouTube Music
+                                </a>
+                                <a class="ctm-dropdown-reset dropdown-item ps-4 py-3 d-flex align-items-center" href="#">
+                                    <i class="material-icons me-3" style="color: red;">smart_display</i>
+                                    YouTube Kids
+                                </a>
+                            </li>
+                            <li class="py-2 ctm-fs-normal">
+                                <a class="ctm-dropdown-reset dropdown-item ps-4 py-3 d-flex align-items-center" href="#">
+                                    <i class="material-icons me-3" style="color: red;">smart_display</i>
+                                    Creator Academy
+                                </a>
+                                <a class="ctm-dropdown-reset dropdown-item ps-4 py-3 d-flex align-items-center" href="#">
+                                    <i class="material-icons me-3" style="color: red;">smart_display</i>
+                                    YouTube for Artists
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Setting list -->
+                    <div class="dropdown me-3">
+                        <button class="btn ctm-text-color d-flex align-items-center tt" type="button" id="apps" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside" data-bs-placement="bottom" title="Settings">
+                            <i class="material-icons">more_vert</i>
+                        </button>
+
+                        <ul class="dropdown-menu dropdown-menu-end rounded-0 border-top-0 p-0 position-absolute end-0" aria-labelledby="apps" style="width: 30rem;">
+                            <li class="py-2 ctm-fs-normal border-bottom">
+                                <a class="ctm-dropdown-reset dropdown-item ps-4 py-3 d-flex align-items-center" href="#">
+                                    <i class="material-icons me-3">verified_user</i>
+                                    Appearance: Device theme
+                                    <i class="material-icons ms-auto">navigate_next</i>
+                                </a>
+                                <a class="ctm-dropdown-reset dropdown-item ps-4 py-3 d-flex align-items-center" href="#">
+                                    <i class="material-icons me-3">pets</i>
+                                    Language: English
+                                    <i class="material-icons ms-auto">navigate_next</i>
+                                </a>
+                                <a class="ctm-dropdown-reset dropdown-item ps-4 py-3 d-flex align-items-center" href="#">
+                                    <i class="material-icons me-3">pending_actions</i>
+                                    Location: Vietnam
+                                    <i class="material-icons ms-auto">navigate_next</i>
+                                </a>
+                                <a class="ctm-dropdown-reset dropdown-item ps-4 py-3 d-flex align-items-center" href="#">
+                                    <i class="material-icons me-3">settings</i>
+                                    Settings
+                                </a>
+                                <a class="ctm-dropdown-reset dropdown-item ps-4 py-3 d-flex align-items-center" href="#">
+                                    <i class="material-icons me-3">account_circle</i>
+                                    Your data in YouTube
+                                </a>
+                                <a class="ctm-dropdown-reset dropdown-item ps-4 py-3 d-flex align-items-center" href="#">
+                                    <i class="material-icons me-3">visibility</i>
+                                    Help
+                                </a>
+                                <a class="ctm-dropdown-reset dropdown-item ps-4 py-3 d-flex align-items-center" href="#">
+                                    <i class="material-icons me-3">schedule</i>
+                                    Send feedback
+                                </a>
+                                <a class="ctm-dropdown-reset dropdown-item ps-4 py-3 d-flex align-items-center" href="#">
+                                    <i class="material-icons me-3">dashboard</i>
+                                    Keyboard shortcuts
+                                </a>
+                            </li>
+                            <li class="py-2 ctm-fs-normal">
+                                <a class="ctm-dropdown-reset dropdown-item ps-4 py-3 d-flex align-items-center" href="#">
+                                    Restricted Mode: Off
+                                    <i class="material-icons ms-auto">navigate_next</i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- sign-in button -->
+                    <button class="btn d-flex align-items-center border border-primary px-3 py-2">
+                        <i class="material-icons me-2 text-primary">account_circle</i>
+                        <span class="ctm-fs-normal fw-bold text-primary">SIGN IN</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- header below: video group list -->
+        <div class="header__below d-flex border-bottom position-fixed bg-white">
+            <a href="#" class="header__below--previous position-absolute d-none d-lg-flex text-reset d-flex align-items-center justify-content-center text-decoration-none bg-white">
+                <i class="material-icons">chevron_left</i>
+            </a>
+            
+            <ul class="header__below-list d-flex align-items-center m-0">
+                <li><a href="#" class="header__below-item text-reset active">All</a></li>
+                <li><a href="#" class="header__below-item text-reset">Your music</a></li>
+                <li><a href="#" class="header__below-item text-reset">Chill-out music</a></li>
+                <li><a href="#" class="header__below-item text-reset">Music</a></li>
+                <li><a href="#" class="header__below-item text-reset">Martial Arts Movies</a></li>
+                <li><a href="#" class="header__below-item text-reset">Live</a></li>
+                <li><a href="#" class="header__below-item text-reset">Chinese television dramas</a></li>
+                <li><a href="#" class="header__below-item text-reset">Golden music</a></li>
+                <li><a href="#" class="header__below-item text-reset">Seafood</a></li>
+                <li><a href="#" class="header__below-item text-reset">Guzheng</a></li>
+                <li><a href="#" class="header__below-item text-reset">Eating</a></li>
+                <li><a href="#" class="header__below-item text-reset">Comedy</a></li>
+                <li><a href="#" class="header__below-item text-reset">Tourism</a></li>
+                <li><a href="#" class="header__below-item text-reset">Pop Music</a></li>
+                <li><a href="#" class="header__below-item text-reset">Esports</a></li>
+                <li><a href="#" class="header__below-item text-reset">Recently Uploaded</a></li>
+            </ul>
+    
+            <a href="#" class="header__below--next position-absolute d-none d-lg-flex p-4 text-reset d-flex align-items-center justify-content-center text-decoration-none bg-white end-0">
+                <i class="material-icons">navigate_next</i>
+            </a>
+        </div>
+    </header>
+
+    <!-- aside/ left-menu -->
+    <aside>
+        <ul class="aside__navbar d-none d-lg-flex flex-column px-0 m-0 bg-white position-fixed">
+            <li>
+                <a href="#" class="aside__navbar-item d-flex flex-column py-4 justify-content-between align-items-center ctm-text-color-dark">
+                    <i class="material-icons mb-2">home</i>
+                    Home
+                </a>
+            </li>
+            <li>
+                <a href="#" class="aside__navbar-item d-flex flex-column py-4 justify-content-between align-items-center ctm-text-color-dark">
+                    <i class="material-icons mb-2">explore</i>
+                    Explore
+                </a>
+            </li>
+            <li>
+                <a href="#" class="aside__navbar-item d-flex flex-column py-4 justify-content-between align-items-center ctm-text-color-dark">
+                    <i class="material-icons mb-2">subscriptions</i>
+                    Subscriptions
+                </a>
+            </li>
+            <li>
+                <a href="#" class="aside__navbar-item d-flex flex-column py-4 justify-content-between align-items-center ctm-text-color-dark">
+                    <i class="material-icons mb-2">video_library</i>
+                    Library
+                </a>
+            </li>
+            <li>
+                <a href="#" class="aside__navbar-item d-flex flex-column py-4 justify-content-between align-items-center ctm-text-color-dark">
+                    <i class="material-icons mb-2">history</i>
+                    History
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <!-- content section -->
+    <section class="content">
+        <div class="container-fluid bg-light px-0 px-md-4 px-lg-5 pt-4 pt-lg-5">
+            <div class="row">
+                <div class="content__video col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava1.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+                
+                <div class="content__video col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava2.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2 active">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+                <div class="content__video col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava3.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+                <div class="content__video col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava4.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+                <div class="content__video col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava5.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+                
+                <div class="content__video col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava6.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+                <div class="content__video col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava7.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+                <div class="content__video col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava8.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row d-none d-md-flex">
+                <div class="col">
+                    <h1 class="mx-0 px-4 py-5 border-top border-3">Breaking news</h1>
+                </div>
+            </div>
+
+            <div class="row border-bottom border-3 mb-5">
+                <input class="d-none" type="radio" name="" id="breaking-news">
+
+                <div class="content__video col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava1.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+                
+                <div class="content__video col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava2.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2 active">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+                <label class="col-12 d-flex d-lg-none justify-content-center align-items-center p-3" for="breaking-news">
+                    <i class="material-icons">expand_more</i>
+                </label>
+
+                <div class="content__video d-none d-lg-inline-flex video__show-more col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava3.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+                <div class="content__video d-none d-lg-inline-flex video__show-more col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava4.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+                <label class="col-12 d-none d-lg-flex justify-content-center align-items-center p-3" for="breaking-news">
+                    <i class="material-icons">expand_more</i>
+                </label>
+
+                <div class="content__video d-none video__show-more col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava5.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+                
+                <div class="content__video d-none video__show-more col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava6.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+                <div class="content__video d-none video__show-more col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava7.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+                <div class="content__video d-none video__show-more col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava8.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+                <div class="content__video d-none video__show-more col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava4.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+                <div class="content__video d-none video__show-more col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava5.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+                
+                <div class="content__video d-none video__show-more col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava6.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+                <div class="content__video d-none video__show-more col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava7.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="content__video col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava1.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+                
+                <div class="content__video col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava2.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2 active">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+                <div class="content__video d-none d-lg-flex col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava3.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+                <div class="content__video d-none d-lg-flex col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava4.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row d-none d-md-flex">
+                <div class="col">
+                    <h1 class="mx-0 px-4 py-5 border-top border-3">Trending</h1>
+                </div>
+            </div> 
+
+            <div class="row border-bottom border-3 mb-5">
+                <input class="d-none" type="radio" name="" id="trending">
+
+                <div class="content__video col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava1.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+                
+                <div class="content__video col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava2.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2 active">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+                <label class="col-12 d-flex d-lg-none justify-content-center align-items-center p-3" for="trending">
+                    <i class="material-icons">expand_more</i>
+                </label>
+
+                <div class="content__video d-none d-lg-inline-flex video__show-more col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava3.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+                <div class="content__video d-none d-lg-inline-flex video__show-more col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava4.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+                <label class="col-12 d-none d-lg-flex justify-content-center align-items-center p-3" for="trending">
+                    <i class="material-icons">expand_more</i>
+                </label>
+
+                <div class="content__video d-none video__show-more col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava5.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+                
+                <div class="content__video d-none video__show-more col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava6.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+                <div class="content__video d-none video__show-more col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava7.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+                <div class="content__video d-none video__show-more col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava8.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+                <div class="content__video d-none video__show-more col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava4.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+                <div class="content__video d-none video__show-more col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava5.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+                
+                <div class="content__video d-none video__show-more col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava6.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+                <div class="content__video d-none video__show-more col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava7.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="content__video col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava1.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+                
+                <div class="content__video col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava2.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2 active">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+                <div class="content__video col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava3.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+                <div class="content__video col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava4.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+                <div class="content__video col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava5.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+                
+                <div class="content__video col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava6.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+                <div class="content__video col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava7.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+                <div class="content__video col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava8.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+                <div class="content__video col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava1.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+                
+                <div class="content__video col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava2.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2 active">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+                <div class="content__video col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava3.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+                <div class="content__video col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava4.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+                <div class="content__video col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava5.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+                
+                <div class="content__video col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava6.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+                <div class="content__video col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava7.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+                <div class="content__video col-lg-3 col-md-6 d-flex flex-column">
+                    <div class="position-relative">
+                        <span class="position-absolute end-0 bottom-0 me-3 mb-3 px-2 py-1 rounded-1 bg-dark fs-5 text-white fw-bold" style="z-index: 1;">2:40</span>
+                        <video class="content__video-vid position-absolute img-fluid opacity-100">
+                            <source src="images/vid.mp4" type="video/mp4">
+                        </video>
+                        <img class="content__video-gif img-fluid" src="images/vid.gif" alt="">
+                    </div>
+    
+                    <div class="pt-3 mb-5 d-flex">
+                        <img class="content__video-ava rounded-circle me-3 ms-3 ms-md-0" src="images/ava8.jpg" alt="">
+                        <div>
+                            <h3 class="content__video-title ctm-fs-normal lh-base">Ad repellat voluptates accusamus enim ut odit aliquam nesciunt eaque nulla dignissimos nesciunt eaque nulla dignissimos</h3>
+                            <div class="ctm-text-color ctm-fs-normal">
+                                <span class="d-inline-flex d-lg-flex align-items-center">
+                                    Accusamus Enim Ut
+                                    <i class="material-icons opacity-100 fs-5 ms-2 d-none d-lg-inline-flex">check_circle</i>
+                                    <i class="material-icons d-lg-none ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="d-inline-flex align-items-center">
+                                    10M views
+                                    <i class="material-icons ms-2 me-1" style="font-size: 0.5rem;">lens</i>
+                                </span>
+                                <span class="time">3 months ago</span>
+                                <button type="submit" class="content__video-live d-none btn border-danger py-1 ctm-fs-normal text-danger fw-bold mt-2">LIVE NOW</button>
+                            </div>
+                        </div>
+                        <a class="content__video-more-info text-reset"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="fixed-bottom bg-white border-top d-flex justify-content-center align-items-center d-lg-none" style="height: 4.8rem;">
+        <a href="#" class="col btn d-flex flex-column">
+            <i class="material-icons">home</i>
+            Home
+        </a>
+        <a href="#" class="col btn d-flex flex-column">
+            <i class="material-icons-outlined">local_fire_department</i>
+            Trending
+        </a>
+        <a href="#" class="col btn d-flex flex-column">
+            <i class="material-icons">video_library</i>
+            Library
+        </a>
+    </footer>
+
+    <!-- offcanvas - aside navbar -->
+    <div class="aside__offcanvas offcanvas offcanvas-start" tabindex="-1" id="menu-btn">
+        <div class="offcanvas-header justify-content-start p-0 ps-4" style="height: 5.6rem;"> <!-- pending: height does not work right -->
+            <a class="ctm-text-color text-decoration-none d-none d-lg-flex align-items-center p-3" data-bs-toggle="offcanvas" href="#menu-btn" role="button" aria-controls="menu-btn">
+                <i class="material-icons">menu</i>
+            </a>
+
+            <a class="px-5" href="#">
+                <img src="images/logo.png" alt="logo" height="20px">
+            </a>
+        </div>
+
+        <div class="offcanvas-body p-0">    
+            <ul class="navbar-nav d-flex flex-column ctm-text-color py-4 border-bottom">
+                <li class="navbar-item">
+                    <a href="#" class="aside__offcanvas-item active nav-link ctm-text-color d-flex align-items-center ps-4 py-0 ctm-fs-normal" style="height: 4rem;"><i class="material-icons px-3 me-4">home</i>Home</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#" class="aside__offcanvas-item nav-link ctm-text-color d-flex align-items-center ps-4 py-0 ctm-fs-normal" style="height: 4rem;"><i class="material-icons px-3 me-4">explore</i>Explore</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#" class="aside__offcanvas-item nav-link ctm-text-color d-flex align-items-center ps-4 py-0 ctm-fs-normal" style="height: 4rem;"><i class="material-icons px-3 me-4">subscriptions</i>Subscriptions</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav d-flex flex-column ctm-text-color py-4 border-bottom">
+                <li class="navbar-item">
+                    <a href="#" class="aside__offcanvas-item nav-link ctm-text-color d-flex align-items-center ps-4 py-0 ctm-fs-normal" style="height: 4rem;"><i class="material-icons px-3 me-4">video_library</i>Library</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#" class="aside__offcanvas-item nav-link ctm-text-color d-flex align-items-center ps-4 py-0 ctm-fs-normal" style="height: 4rem;"><i class="material-icons px-3 me-4">history</i>History</a>
+                </li>
+            </ul>
+            
+            <div class="px-5 py-4 ctm-fs-normal ctm-text-color border-bottom">
+                <p>Sign in to like videos, comment, and subscribe.</p>
+                <button class="btn d-inline-flex align-items-center border border-primary px-4 py-2">
+                    <i class="material-icons me-2 text-primary">account_circle</i>
+                    <span class="ctm-fs-normal fw-bold text-primary">SIGN IN</span>
+                </button>
+            </div>
+
+            <ul class="navbar-nav d-flex flex-column ctm-text-color py-4 border-bottom">
+                <h3 class="px-5 py-2 ctm-fs-normal">BEST OF YOUTUBE</h3>
+                <li class="navbar-item">
+                    <a href="#" class="aside__offcanvas-item nav-link ctm-text-color d-flex align-items-center ps-4 py-0 ctm-fs-normal" style="height: 4rem;"><i class="material-icons px-3 me-4">library_music</i>Music</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#" class="aside__offcanvas-item nav-link ctm-text-color d-flex align-items-center ps-4 py-0 ctm-fs-normal" style="height: 4rem;"><i class="material-icons px-3 me-4">sports_soccer</i>Sports</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#" class="aside__offcanvas-item nav-link ctm-text-color d-flex align-items-center ps-4 py-0 ctm-fs-normal" style="height: 4rem;"><i class="material-icons px-3 me-4">sports_esports</i>Gaming</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#" class="aside__offcanvas-item nav-link ctm-text-color d-flex align-items-center ps-4 py-0 ctm-fs-normal" style="height: 4rem;"><i class="material-icons px-3 me-4">feed</i>News</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#" class="aside__offcanvas-item nav-link ctm-text-color d-flex align-items-center ps-4 py-0 ctm-fs-normal" style="height: 4rem;"><i class="material-icons px-3 me-4">live_tv</i>Live</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#" class="aside__offcanvas-item nav-link ctm-text-color d-flex align-items-center ps-4 py-0 ctm-fs-normal" style="height: 4rem;"><i class="material-icons px-3 me-4">videocam</i>360° Video</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav d-flex flex-column ctm-text-color py-4 border-bottom">
+                <li class="navbar-item">
+                    <a href="#" class="aside__offcanvas-item nav-link ctm-text-color d-flex align-items-center ps-4 py-0 ctm-fs-normal" style="height: 4rem;"><i class="material-icons px-3 me-4">add_circle</i>Browse Channels</a>
+                </li>
+            </ul>
+            
+            <ul class="navbar-nav d-flex flex-column ctm-text-color py-4 border-bottom">
+                <h3 class="px-5 py-2 ctm-fs-normal">MORE FROM YOUTUBE</h3>
+                <li class="navbar-item">
+                    <a href="#" class="aside__offcanvas-item nav-link ctm-text-color d-flex align-items-center ps-4 py-0 ctm-fs-normal" style="height: 4rem;"><i class="material-icons px-3 me-4">stream</i>Live</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav d-flex flex-column ctm-text-color py-4 border-bottom">
+                <li class="navbar-item">
+                    <a href="#" class="aside__offcanvas-item nav-link ctm-text-color d-flex align-items-center ps-4 py-0 ctm-fs-normal" style="height: 4rem;"><i class="material-icons px-3 me-4">settings</i>Settings</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#" class="aside__offcanvas-item nav-link ctm-text-color d-flex align-items-center ps-4 py-0 ctm-fs-normal" style="height: 4rem;"><i class="material-icons px-3 me-4">report</i>Report history</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#" class="aside__offcanvas-item nav-link ctm-text-color d-flex align-items-center ps-4 py-0 ctm-fs-normal" style="height: 4rem;"><i class="material-icons px-3 me-4">help</i>Help</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#" class="aside__offcanvas-item nav-link ctm-text-color d-flex align-items-center ps-4 py-0 ctm-fs-normal" style="height: 4rem;"><i class="material-icons px-3 me-4">feedback</i>Send feedback</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav d-flex flex-row flex-wrap ctm-text-color ps-5 pe-2 pt-4">
+                <li class="navbar-item">
+                    <a href="#" class="nav-link ctm-text-color d-flex align-items-center me-2 pe-1 fs-5 fw-bold py-0">About</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#" class="nav-link ctm-text-color d-flex align-items-center me-2 pe-1 fs-5 fw-bold py-0">Press</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#" class="nav-link ctm-text-color d-flex align-items-center me-2 pe-1 fs-5 fw-bold py-0">Copyright</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#" class="nav-link ctm-text-color d-flex align-items-center me-2 pe-1 fs-5 fw-bold py-0">Contact us</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#" class="nav-link ctm-text-color d-flex align-items-center me-2 pe-1 fs-5 fw-bold py-0">Creators</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#" class="nav-link ctm-text-color d-flex align-items-center me-2 pe-1 fs-5 fw-bold py-0">Advertise</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#" class="nav-link ctm-text-color d-flex align-items-center me-2 pe-1 fs-5 fw-bold py-0">Developers</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav d-flex flex-row flex-wrap ctm-text-color ps-5 pe-2 pt-4">
+                <li class="navbar-item">
+                    <a href="#" class="nav-link ctm-text-color d-flex align-items-center me-2 pe-1 fs-5 fw-bold py-0">Terms</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#" class="nav-link ctm-text-color d-flex align-items-center me-2 pe-1 fs-5 fw-bold py-0">Privacy</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#" class="nav-link ctm-text-color d-flex align-items-center me-2 pe-1 fs-5 fw-bold py-0">Policy & Safety</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#" class="nav-link ctm-text-color d-flex align-items-center me-2 pe-1 fs-5 fw-bold py-0">How YouTube works</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#" class="nav-link ctm-text-color d-flex align-items-center me-2 pe-1 fs-5 fw-bold py-0">Test new features</a>
+                </li>
+            </ul>
+ 
+            <div class="ctm-text-color ps-5 pe-2 py-4 fs-5">
+                <span>© 2021 Google LLC</span>
+            </div>
+        </div>
+    </div>
+  
+    <!-- offcanvas - search -->
+    <div class="search-md__container offcanvas offcanvas-top" tabindex="-1" id="search-offcanvas" aria-labelledby="search-offcanvas-Label" style="height: 4.8rem;">
+        <div class="h-100 d-flex align-items-center justify-content-between">
+            <button class="btn ctm-text-color fs-1" type="button" data-bs-dismiss="offcanvas" aria-label="Close">
+                <i class="bi bi-arrow-left-short"></i>  
+            </button>
+            <input class="search-md__box w-100 ctm-fs-normal border-top-0 border-start-0 border-end-0 border-2 border-bottom border-secondary ps-1 pb-1" type="text" name="" id="" autofocus placeholder="Search YouTube">
+            <button class="btn ctm-text-color fs-3 p-3" type="submit">
+                <i class="bi bi-search"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal - voice search -->
+    <div class="modal fade" id="voice-search" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content ps-5" style="width: 59rem; height: 42rem;">
+                <div class="modal-header border-bottom-0 align-items-start">
+                    <h5 class="modal-title fs-1 pt-5 pb-1 text-dark">Search with your voice </h5>
+                    <button type="button" class="ctm-btn-reset btn-close ctm-fs-normal p-4" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <span class="ctm-fs-normal ctm-text-color">To search by voice, go to your browser settings and allow access to microphone</span>
+                </div>
+                <div class="modal-footer border-top-0 justify-content-center">
+                    <button type="button" class="btn rounded-circle d-flex align-items-center bg-secondary p-3 mb-5" style="--bs-bg-opacity: 0.25;">
+                        <i class="material-icons" style="font-size: 4rem;">mic</i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal - account btn -->
+    <div class="modal" id="account" tabindex="-1" aria-labelledby="account-modal-label" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header justify-content-start shadow-sm"  style="height: 5.2rem;">
+                    <button type="button" class="ctm-btn-reset btn-close fs-2 ms-0 me-5" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title fs-3" id="account-modal-label">Account</h5>
+                </div>
+
+                <div class="modal-body p-0">
+                    <div class="p-3 border-bottom">
+                        <div class="py-3 d-flex align-items-center ctm-text-color">
+                            <i class="material-icons p-1 me-5">switch_account</i>
+                            <span class="fs-3">Sign in</span>
+                        </div>
+                    </div>
+                    <div class="p-3 border-bottom">
+                        <div class="py-3 d-flex align-items-center ctm-text-color">
+                            <i class="material-icons p-1 me-5">settings</i>
+                            <span class="fs-3">Settings</span>
+                        </div>
+                        <div class="py-3 d-flex align-items-center ctm-text-color">
+                            <i class="material-icons p-1 me-5">admin_panel_settings</i>
+                            <span class="fs-3">Your data in YouTube</span>
+                        </div>
+                        <div class="py-3 d-flex align-items-center ctm-text-color">
+                            <i class="material-icons p-1 me-5">feedback</i>
+                            <span class="fs-3">Feedback</span>
+                        </div>
+                        <div class="py-3 d-flex align-items-center ctm-text-color">
+                            <i class="material-icons p-1 me-5">help_outline</i>
+                            <span class="fs-3">Help</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer border-0 justify-content-center">
+                    <a href="#" class="btn px-0 fw-bold ctm-fs-normal ctm-text-color">Privicy Policy</a>
+                    <i class="bi bi-dot"></i>
+                    <a href="#" class="btn px-0 fw-bold ctm-fs-normal ctm-text-color">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap - JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    
+    <script>
+        const tooltips = document.querySelectorAll('.tt')
+        tooltips.forEach(t => {
+            new bootstrap.Tooltip(t)
+        })
+    </script>
+</body>
+</html>

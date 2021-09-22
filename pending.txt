@@ -1,3 +1,5 @@
 1/ styling for scrollbar on Firefox
 2/ scrolling function for video list on header
 3/ hide/unhide header on scroll for mobile & tablet viewports
+4/ Bootstrap grid cause right padding on mobile viewport
+5/ Auto close behavior does not work when adding tooltip
